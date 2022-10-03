@@ -41,7 +41,7 @@ public class FirstClass {
         rezultats = c+k;
         System.out.println(rezultats);
 
-
+//komentars
 
         rezultats = g - k;
         System.out.println("atņemšanas rezultāts ir:" + rezultats);
