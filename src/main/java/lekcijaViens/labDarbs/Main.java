@@ -78,6 +78,26 @@ public class Main {
         rezultats = 5*(3+7);
        System.out.println(rezultats);
 
+       // uzdevums
+
+       String autoNosaukums = "Mercedes";
+        System.out.println(autoNosaukums);
+        int vecumsTris = 25;
+       System.out.println(vecumsTris);
+        double svars = 197.5;
+        System.out.println(svars);
+        boolean VaiIrRetro = true;
+        System.out.println("vai šis auto ir retro?:" + true);
+
+
+
+
+
+
+
+
+
+
 
 
 
