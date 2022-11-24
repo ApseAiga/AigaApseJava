@@ -9,7 +9,7 @@ public class SouceDemoProductsTest extends BaseTest {
 
 
     @Test
-    public void testProductToCard(){
+    public void testProductToCard() throws InterruptedException {
         WebElement lietotajVardsIevadesLauks = parluks.findElement(By.id("user-name"));
         lietotajVardsIevadesLauks.sendKeys("standard_user");
 
@@ -19,9 +19,14 @@ public class SouceDemoProductsTest extends BaseTest {
         WebElement loginPoga = parluks.findElement(By.id("login-button"));
         loginPoga.click();
 
+
+
         WebElement productPageTitle = parluks.findElement(By.cssSelector("span.title"));
         String actualPageTitleText = productPageTitle.getText();
         Assert.assertEquals(actualPageTitleText,"PRODUCTS");
+
+        Thread.sleep(5000);
+
 
 
 

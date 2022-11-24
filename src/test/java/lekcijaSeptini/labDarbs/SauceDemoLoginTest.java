@@ -1,15 +1,23 @@
 package lekcijaSeptini.labDarbs;
 
+import lekcijaAstoni.pageObject.LoginPage;
+import lekcijaAstoni.pageObject.ProductsPage;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedCondition;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class SauceDemoLoginTest extends BaseTest {
+
+    @Test
+    public void testLoginPageObjectExample(){
+        LoginPage loginPage = new LoginPage(parluks);
+        loginPage.login("hdedgd", "hghghgh");
+        Assert.assertEquals(loginPage.getErrorText(),"Epic sadface: Username and password do not match any user in this service");
+
+    }
 
 
     @Test
@@ -68,6 +76,17 @@ public class SauceDemoLoginTest extends BaseTest {
 
         String errorText = errorTextField.getText();
         Assert.assertEquals(errorText, expectedErrorMessage);
+    }
+
+    @Test
+    public void testSuccesfulLogin(){
+        LoginPage loginPage = new LoginPage(parluks);
+        loginPage.login("standard_user", "secret_sauce");
+        ProductsPage produktuLapa = new ProductsPage(parluks);
+        wait.until(ExpectedConditions.visibilityOf(produktuLapa.getPageTitle()));
+        Assert.assertEquals(produktuLapa.getPageTitle().getText(),"PRODUCTS");
+
+
     }
 
 

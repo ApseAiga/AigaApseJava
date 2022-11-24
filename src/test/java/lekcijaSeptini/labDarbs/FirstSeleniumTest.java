@@ -33,7 +33,7 @@ public class FirstSeleniumTest {
     public void testPageTitle(){
         parluks.navigate().to("https://www.lu.lv/");
         String nosaukums = parluks.getTitle();
-        Assert.assertEquals(nosaukums, "Latvijas Universitate");
+        Assert.assertEquals(nosaukums, "Latvijas Universitāte");
         parluks.quit();
 
     }
